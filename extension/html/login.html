@@ -1,0 +1,18 @@
+<body>
+    <div id="login-wrapper">
+        <div id="loginHeader">
+            Login Page
+        </div> 
+        <div id="login-form-wrapper" ng-controller="LoginController">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" ng-model="email"><br>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" ng-model="password"><br>
+                <input type="button" value="Login" ng-click="login()">
+                <div class="errors"> {{message}} </div>
+            <div class="loginSignupSwitch">
+                <a href="#!/signup"> New User? Sign Up!</a>
+            </div>
+        </div>
+    </div>
+</body>

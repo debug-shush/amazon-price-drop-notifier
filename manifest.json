@@ -1,0 +1,24 @@
+{
+    "name": "Amazon Price Scraper",
+    "description": "pop-up message extension",
+    "version": "1.0",
+    "manifest_version": 2,
+    "permissions": [
+      "declarativeContent",
+      "storage",
+      "tabs"
+    ],
+    "background": {
+        "scripts": ["./js/jquery-3.6.0.min.js", "./js/background.js"]
+      },
+    "browser_action": {
+        "default_popup": "./html/popup.html"
+      },
+    "content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com; object-src 'self'",
+    "content_scripts": [
+      {
+          "matches": ["*://www.amazon.in/*/dp/*", "*://www.amazon.in/dp/*"],
+          "js": ["./js/scrape.js"]
+      }
+    ]
+  }
